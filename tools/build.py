@@ -402,7 +402,7 @@ def build_home():
 {footer()}"""
 
     write("index.html", head(
-        "Blueline Travels Mosul | Corporate Travel Agency",
+        "Blueline Travel Agency",
         "Blueline Travels Mosul — corporate travel management, business flights, hotels and group travel from Mosul, Iraq.",
         "/", lcp_image="/img/slider/hero-citadel-walls.webp") + body)
 
