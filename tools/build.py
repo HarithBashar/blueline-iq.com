@@ -25,19 +25,16 @@ CONFIG = {
     "domain": "https://blueline-iq.com",
     "brand": "Blueline Travels — Mosul",
     "brand_long": "Blueline Travels — Mosul, Iraq",
-    "phone_display": "+964 750 248 0360",  # TODO(owner): confirm this is still the right number for Blueline/Mosul
-    "phone_tel": "+9647502480360",
-    "whatsapp": "https://wa.me/9647502480360",
-    "email": "info@blueline-iq.com",
+    "phone_display": "+964 773 096 8898",
+    "phone_tel": "+9647730968898",
+    "whatsapp": "https://wa.me/9647730968898",
+    "email": "contact@blueline-iq.com",
     "address_lines": ["Al-Muhandisin St.", "Mosul", "Iraq"],
     "registration": "Blueline Travels — Mosul branch, proudly serving corporate and leisure travelers across Iraq.",  # TODO(owner): swap for a formal registration line if/when you want one
     "social": {
-        # TODO(owner): the old CTW social links were dropped (they pointed to a
-        # different, unrelated business's real accounts) — paste Blueline's own
-        # Instagram/LinkedIn/Facebook URLs here once they exist.
-        "instagram": "#",
-        "linkedin": "#",
-        "facebook": "#",
+        "instagram": "https://www.instagram.com/bluelinee.iq",
+        "linkedin": "#",  # TODO(owner): paste Blueline's LinkedIn URL once it exists
+        "facebook": "https://www.facebook.com/Bluelineeiq/",
     },
     # Contact form: create a free form at https://formspree.io and paste its
     # endpoint here, then re-run this script. Until then the form falls back

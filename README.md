@@ -42,15 +42,15 @@ Edit it, then regenerate and redeploy:
 python3 tools/build.py
 ```
 
-Live contact details: `+964 750 248 0360` (TODO: confirm this is Blueline's number) ·
-`info@blueline-iq.com` · Al-Muhandisin St., Mosul, Iraq. Social links
-(Instagram/LinkedIn/Facebook) are placeholders (`#`) pending real profile URLs.
+Live contact details: `+964 773 096 8898` · `contact@blueline-iq.com` ·
+Al-Muhandisin St., Mosul, Iraq. Instagram/Facebook are live; LinkedIn is
+still a placeholder (`#`) pending a real profile URL.
 
 ## Contact form
 
 `/contact-us/` intentionally has no backend: on submit it opens the visitor's
 own e-mail app with a pre-filled draft (name/email/phone/message) addressed
-to `info@blueline-iq.com` — they hit send once from there. Zero cost, zero
+to `contact@blueline-iq.com` — they hit send once from there. Zero cost, zero
 accounts, works on any host, forever. (If a real one-click submit is ever
 wanted instead, swap in a free Formspree endpoint via `CONFIG["form_action"]`
 in `tools/build.py` — the JS already supports it, just unused for now.)
