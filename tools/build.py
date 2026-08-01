@@ -175,7 +175,7 @@ def navbar(active):
     sub_active = any(active == slug for slug, _ in SERVICES)
     return f"""<header class="site-header">
   <div class="bar">
-    <a class="logo" href="/"><img src="/img/logo-light.png" alt="Blueline Travels" width="190" height="58"></a>
+    <a class="logo" href="/"><img src="/img/logo-light.png" alt="Blueline Travels" width="58" height="58"></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">{icon('menu')}</button>
     <ul class="nav" id="nav">
       <li><a href="/"{cur('home')}>Home</a></li>
@@ -213,7 +213,7 @@ def footer():
     </div>
     <div class="footer-mid">
       <div class="flogo">
-        <img src="/img/logo-light.png" alt="Blueline Travels" width="190" height="74">
+        <img src="/img/logo-light.png" alt="Blueline Travels" width="74" height="74">
         <ul class="social">
           <li><a href="{CONFIG['social']['instagram']}" aria-label="Instagram" rel="external noopener" target="_blank">{icon('instagram')}</a></li>
           <li><a href="{CONFIG['social']['linkedin']}" aria-label="LinkedIn" rel="external noopener" target="_blank">{icon('linkedin')}</a></li>
