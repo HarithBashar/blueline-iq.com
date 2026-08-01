@@ -134,8 +134,8 @@ SERVICES = [
     ("groups", "Blueline Groups, Conferences and Incentives"),
 ]
 
-def head(title, desc, path, og_image="/img/slider/hero-citadel-walls.webp",
-         lcp_image="/img/banner-erbil.webp"):
+def head(title, desc, path, og_image="/img/slider/hero-grand-mosque.webp",
+         lcp_image="/img/banner-mosul.webp"):
     # lcp_image is the above-the-fold background for this page; preloading it
     # lets the browser fetch it in parallel with the CSS instead of after it.
     return f"""<!DOCTYPE html>
@@ -242,7 +242,7 @@ def footer():
 """
 
 def page_banner(eyebrow, title):
-    return f"""<div class="page-banner" style="background-image:url('/img/banner-erbil.webp')">
+    return f"""<div class="page-banner" style="background-image:url('/img/banner-mosul.webp')">
   <div class="container">
     <div class="eyebrow">{eyebrow}</div>
     <h1>{title}</h1>
@@ -299,9 +299,11 @@ def build_home():
     body = f"""{navbar('home')}
 <main id="main">
 <section class="hero" aria-label="Blueline Travels — Mosul">
-  <div class="slide active" style="background-image:url('/img/slider/hero-citadel-walls.webp')"></div>
-  <div class="slide" data-bg="/img/slider/hero-skyline-night.webp"></div>
-  <div class="slide" data-bg="/img/slider/hero-citadel.webp"></div>
+  <div class="slide active" style="background-image:url('/img/slider/hero-grand-mosque.webp')"></div>
+  <div class="slide" data-bg="/img/slider/hero-hadba.webp"></div>
+  <div class="slide" data-bg="/img/slider/hero-nabi-yunus.webp"></div>
+  <div class="slide" data-bg="/img/slider/hero-bashtabiya.webp"></div>
+  <div class="slide" data-bg="/img/slider/hero-tigris-bridge.webp"></div>
   <div class="caption">
     <div class="eyebrow">Embark on Unmatched Journeys</div>
     <h1>Discover Excellence in Travel with <span class="outline">Blueline</span></h1>
@@ -332,7 +334,7 @@ def build_home():
   </div>
 </section>
 
-<section class="stats section" data-bg-section="/img/banner-erbil.webp">
+<section class="stats section" data-bg-section="/img/banner-mosul.webp">
   <div class="container">
     <div class="stats-grid">
       <div class="stat fade-up"><div class="icon">{icon('send')}</div><h3 data-count="250">+250</h3><h4>Airlines</h4></div>
@@ -404,7 +406,7 @@ def build_home():
     write("index.html", head(
         "Blueline Travel Agency",
         "Blueline Travels Mosul — corporate travel management, business flights, hotels and group travel from Mosul, Iraq.",
-        "/", lcp_image="/img/slider/hero-citadel-walls.webp") + body)
+        "/", lcp_image="/img/slider/hero-grand-mosque.webp") + body)
 
 # ----------------------------------------------------------------------------
 # About page
@@ -452,7 +454,7 @@ def build_about():
   </div>
 </section>
 
-<section class="band section" data-bg-section="/img/banner-erbil.webp">
+<section class="band section" data-bg-section="/img/banner-mosul.webp">
   <div class="container">
     <div class="stars" aria-hidden="true">★★★★★</div>
     <h3 style="max-width:760px">{testi_h5}</h3>
@@ -596,12 +598,13 @@ def build_contact():
 # Credits, 404, robots, sitemap
 # ----------------------------------------------------------------------------
 def build_credits():
-    photos = json.load(open(Path(__file__).parent / "erbil-photos.json"))
+    photos = json.load(open(Path(__file__).parent / "mosul-photos.json"))
     used = {
-        "cand-citadel-pano.jpg": "Homepage hero — Erbil Citadel walls",
-        "cand-night2025.png": "Homepage hero — Erbil skyline at night",
-        "cand-citadel-day.jpg": "Homepage hero — aerial view of Erbil Citadel",
-        "cand-skyline-night.jpg": "Page banners — Erbil by night",
+        "hero-grand-mosque.webp": "Homepage hero — the Grand Mosque of Mosul",
+        "hero-hadba.webp": "Homepage hero — the Al-Hadba minaret (منارة الحدباء)",
+        "hero-nabi-yunus.webp": "Homepage hero — the Nabi Yunus mosque (جامع النبي يونس)",
+        "hero-bashtabiya.webp": "Homepage hero — Bashtabiya castle (قلعة باشطابيا) on the Tigris",
+        "hero-tigris-bridge.webp": "Homepage hero & page banners — the Tigris and the Fourth Bridge",
     }
     rows = []
     for title, m in photos.items():
@@ -617,21 +620,19 @@ def build_credits():
 {page_banner('Blueline Travels', 'Photo Credits')}
 <section class="section">
   <div class="container">
-    <p>Photographs of Erbil used on this site are the work of the following photographers, used under their respective free licenses:</p>
+    <p>Photographs of Mosul used on this site are the work of the following photographers, used under their respective free licenses:</p>
     <ul class="checklist">
 {chr(10).join(rows)}
     </ul>
     <p>Licenses: <a href="https://creativecommons.org/licenses/by/4.0/" rel="external noopener" target="_blank">CC BY 4.0</a> ·
-       <a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="external noopener" target="_blank">CC BY-SA 2.0</a> ·
-       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="external noopener" target="_blank">CC BY-SA 4.0</a> ·
-       <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="external noopener" target="_blank">CC0</a></p>
+       <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="external noopener" target="_blank">CC BY-SA 4.0</a></p>
   </div>
 </section>
 </main>
 {footer()}"""
     write("credits/index.html", head(
         "Photo Credits | Blueline Travels Mosul",
-        "Attribution for the openly licensed photographs of Erbil used on this website.",
+        "Attribution for the openly licensed photographs of Mosul used on this website.",
         "/credits/") + body)
 
 def build_404():

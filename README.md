@@ -7,7 +7,7 @@ static host.
 ```
 site/     ← THE WEBSITE. Deploy this folder (and only this folder).
 tools/    build.py regenerates site/ from the CONFIG block inside it;
-          erbil-photos.json holds the photo license/attribution records
+          mosul-photos.json holds the photo license/attribution records
           used to render /credits/.
 ```
 
@@ -66,8 +66,9 @@ then open http://localhost:8900/ (root-absolute paths — don't open the files d
 ## Notes
 
 - Total site weight ≈ 3 MB; heaviest page ≈ 1 MB.
-- Erbil photos are CC-licensed from Wikimedia Commons — attribution lives on
-  `/credits/` and in `tools/erbil-photos.json`. Keep the credits page.
+- Mosul photos are CC BY-SA 4.0 from Wikimedia Commons — attribution lives on
+  `/credits/` and in `tools/mosul-photos.json`. Keep the credits page: BY-SA
+  requires crediting the photographer wherever the photos are shown.
 - The Ken Burns hero, counters, scroll ring etc. are all in `site/js/main.js`
   (~5 KB, dependency-free).
 - Design tokens (colours, fonts, spacing) are CSS custom properties at the top
