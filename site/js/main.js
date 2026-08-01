@@ -1,4 +1,4 @@
-/* CTW Travels — Erbil · vanilla JS, no dependencies */
+/* Blueline Travels — Mosul · vanilla JS, no dependencies */
 (function () {
   'use strict';
 

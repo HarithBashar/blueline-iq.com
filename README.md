@@ -1,6 +1,6 @@
-# ctwtravels-iq.com — CTW Travels (Erbil branch)
+# blueline-iq.com — Blueline Travels (Mosul branch)
 
-Static portfolio website for CTW Travels' Erbil branch. No backend, no build
+Static portfolio website for Blueline Travels' Mosul branch. No backend, no build
 tools, no frameworks — plain HTML + CSS + vanilla JS, deployable on any free
 static host.
 
@@ -24,7 +24,7 @@ next build.
 
 **Cloudflare Pages** (recommended — fastest in/near Iraq):
 1. pages.cloudflare.com → Create project → Direct upload → drag the `site/` folder.
-2. Custom domains → add `ctwtravels-iq.com` (the domain's DNS moves to Cloudflare).
+2. Custom domains → add `blueline-iq.com` (the domain's DNS moves to Cloudflare).
 
 **Netlify**: app.netlify.com/drop → drag the `site/` folder → Domain settings → add custom domain.
 
@@ -42,15 +42,15 @@ Edit it, then regenerate and redeploy:
 python3 tools/build.py
 ```
 
-Live contact details: `+964 750 248 0360` · `info@ctwtravels-iq.com` ·
-Shorash Street, Erbil, 44001, Iraq. Social links (Instagram/LinkedIn/Facebook)
-are still placeholders (`#`) pending real profile URLs.
+Live contact details: `+964 750 248 0360` (TODO: confirm this is Blueline's number) ·
+`info@blueline-iq.com` · Al-Muhandisin St., Mosul, Iraq. Social links
+(Instagram/LinkedIn/Facebook) are placeholders (`#`) pending real profile URLs.
 
 ## Contact form
 
 `/contact-us/` intentionally has no backend: on submit it opens the visitor's
 own e-mail app with a pre-filled draft (name/email/phone/message) addressed
-to `info@ctwtravels-iq.com` — they hit send once from there. Zero cost, zero
+to `info@blueline-iq.com` — they hit send once from there. Zero cost, zero
 accounts, works on any host, forever. (If a real one-click submit is ever
 wanted instead, swap in a free Formspree endpoint via `CONFIG["form_action"]`
 in `tools/build.py` — the JS already supports it, just unused for now.)

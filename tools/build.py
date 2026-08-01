@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Static site generator for ctwtravels-iq.com (CTW Travels — Erbil branch).
+Static site generator for blueline-iq.com (Blueline Travels — Mosul branch).
 
 Reads page copy from ../reference/site-mirror/ (the company's own site text,
 migrated verbatim per the owner's instruction) and emits a dependency-free
@@ -22,19 +22,22 @@ OUT = ROOT / "site"
 # CONFIG — everything that will change when the real details arrive lives here
 # ----------------------------------------------------------------------------
 CONFIG = {
-    "domain": "https://ctwtravels-iq.com",
-    "brand": "CTW Travels — Erbil",
-    "brand_long": "Cross The World (CTW) Travels — Erbil, Iraq",
-    "phone_display": "+964 750 248 0360",
+    "domain": "https://blueline-iq.com",
+    "brand": "Blueline Travels — Mosul",
+    "brand_long": "Blueline Travels — Mosul, Iraq",
+    "phone_display": "+964 750 248 0360",  # TODO(owner): confirm this is still the right number for Blueline/Mosul
     "phone_tel": "+9647502480360",
     "whatsapp": "https://wa.me/9647502480360",
-    "email": "info@ctwtravels-iq.com",
-    "address_lines": ["Shorash Street", "Erbil, 44001", "Iraq"],
-    "registration": "CTW Travels — Erbil branch, proudly serving corporate and leisure travelers across the Kurdistan Region of Iraq.",  # TODO(owner): swap for a formal registration line if/when you want one
+    "email": "info@blueline-iq.com",
+    "address_lines": ["Al-Muhandisin St.", "Mosul", "Iraq"],
+    "registration": "Blueline Travels — Mosul branch, proudly serving corporate and leisure travelers across Iraq.",  # TODO(owner): swap for a formal registration line if/when you want one
     "social": {
-        "instagram": "https://www.instagram.com/ctwtravels.iq",
-        "linkedin": "https://www.linkedin.com/company/ctwtravelsco",
-        "facebook": "https://www.facebook.com/CTWTravelsco",
+        # TODO(owner): the old CTW social links were dropped (they pointed to a
+        # different, unrelated business's real accounts) — paste Blueline's own
+        # Instagram/LinkedIn/Facebook URLs here once they exist.
+        "instagram": "#",
+        "linkedin": "#",
+        "facebook": "#",
     },
     # Contact form: create a free form at https://formspree.io and paste its
     # endpoint here, then re-run this script. Until then the form falls back
@@ -131,7 +134,7 @@ SERVICES = [
     ("car", "Business Car Hire & Rental"),   # typo fixed ("Hair" → "Hire")
     ("implementation", "Implementation"),
     ("reporting", "Management Information Reporting"),
-    ("groups", "CTW Groups, Conferences and Incentives"),
+    ("groups", "Blueline Groups, Conferences and Incentives"),
 ]
 
 def head(title, desc, path, og_image="/img/slider/hero-citadel-walls.webp",
@@ -172,7 +175,7 @@ def navbar(active):
     sub_active = any(active == slug for slug, _ in SERVICES)
     return f"""<header class="site-header">
   <div class="bar">
-    <a class="logo" href="/"><img src="/img/logo-light.png" alt="CTW — Cross The World Travels" width="190" height="58"></a>
+    <a class="logo" href="/"><img src="/img/logo-light.png" alt="Blueline Travels" width="190" height="58"></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">{icon('menu')}</button>
     <ul class="nav" id="nav">
       <li><a href="/"{cur('home')}>Home</a></li>
@@ -210,7 +213,7 @@ def footer():
     </div>
     <div class="footer-mid">
       <div class="flogo">
-        <img src="/img/logo-light.png" alt="CTW — Cross The World Travels" width="190" height="74">
+        <img src="/img/logo-light.png" alt="Blueline Travels" width="190" height="74">
         <ul class="social">
           <li><a href="{CONFIG['social']['instagram']}" aria-label="Instagram" rel="external noopener" target="_blank">{icon('instagram')}</a></li>
           <li><a href="{CONFIG['social']['linkedin']}" aria-label="LinkedIn" rel="external noopener" target="_blank">{icon('linkedin')}</a></li>
@@ -298,13 +301,13 @@ def build_home():
 
     body = f"""{navbar('home')}
 <main id="main">
-<section class="hero" aria-label="CTW Travels — Erbil">
+<section class="hero" aria-label="Blueline Travels — Mosul">
   <div class="slide active" style="background-image:url('/img/slider/hero-citadel-walls.webp')"></div>
   <div class="slide" data-bg="/img/slider/hero-skyline-night.webp"></div>
   <div class="slide" data-bg="/img/slider/hero-citadel.webp"></div>
   <div class="caption">
     <div class="eyebrow">Embark on Unmatched Journeys</div>
-    <h1>Discover Excellence in Travel with <span class="outline">CTW</span></h1>
+    <h1>Discover Excellence in Travel with <span class="outline">Blueline</span></h1>
   </div>
 </section>
 
@@ -312,7 +315,7 @@ def build_home():
   <div class="container split">
     <div class="fade-up">
       <div class="eyebrow">About Us</div>
-      <h2 class="section-title">Cross The <span>World</span> (CTW)</h2>
+      <h2 class="section-title">About <span>Blueline</span> Travels</h2>
       {chr(10).join('      ' + clean_p(p) for p in about_ps)}
       <div class="phone-call">
         <div class="icon">{icon('whatsapp')}</div>
@@ -326,7 +329,7 @@ def build_home():
       <div class="about-img"><img src="/img/about.webp" alt="Traveler reviewing a flight itinerary at the airport" width="900" height="600" loading="lazy"></div>
       <svg class="roundel" viewBox="0 0 300 300">
         <defs><path id="cp" d="M 150,150 m -60,0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0"/></defs>
-        <text><textPath href="#cp"> - C T W - C T W - C T W - C T W - C T W</textPath></text>
+        <text><textPath href="#cp"> - BLUELINE - BLUELINE - BLUELINE - BLUELINE</textPath></text>
       </svg>
     </div>
   </div>
@@ -402,8 +405,8 @@ def build_home():
 {footer()}"""
 
     write("index.html", head(
-        "Cross The World — CTW Travels Erbil | Corporate Travel Agency",
-        "CTW Travels Erbil — corporate travel management, business flights, hotels and group travel from the heart of Kurdistan, Iraq.",
+        "Blueline Travels Mosul | Corporate Travel Agency",
+        "Blueline Travels Mosul — corporate travel management, business flights, hotels and group travel from Mosul, Iraq.",
         "/", lcp_image="/img/slider/hero-citadel-walls.webp") + body)
 
 # ----------------------------------------------------------------------------
@@ -435,7 +438,7 @@ def build_about():
       {chr(10).join('      ' + p for p in intro_ps)}
     </div>
     <div class="fade-up about-img">
-      <img src="/img/about.webp" alt="CTW travel consultant planning an itinerary" width="900" height="600" loading="lazy">
+      <img src="/img/about.webp" alt="Blueline travel consultant planning an itinerary" width="900" height="600" loading="lazy">
     </div>
   </div>
 </section>
@@ -478,7 +481,7 @@ def build_about():
 {footer()}"""
 
     write("about/index.html", head(
-        "About Us | CTW Travels Erbil — Dedicated Corporate Travel Agency",
+        "About Us | Blueline Travels Mosul — Dedicated Corporate Travel Agency",
         "A dedicated corporate travel agency, 100% focused on delivering the highest quality services and support to your company and your business travellers.",
         "/about/") + body)
 
@@ -538,7 +541,7 @@ def build_services():
 {footer()}"""
 
         write(f"{slug}/index.html", head(
-            f"{label} | CTW Travels Erbil",
+            f"{label} | Blueline Travels Mosul",
             SERVICE_DESC[slug],
             f"/{slug}/") + body)
 
@@ -549,11 +552,11 @@ def build_contact():
     addr = "<br>".join(html.escape(x) for x in CONFIG["address_lines"])
     body = f"""{navbar('contact')}
 <main id="main">
-{page_banner('Cross The World', 'Contact Us')}
+{page_banner('Blueline Travels', 'Contact Us')}
 <section class="section">
   <div class="container split">
     <div class="fade-up">
-      <h2 class="section-title">CTW Travels <span>Erbil</span></h2>
+      <h2 class="section-title">Blueline Travels <span>Mosul</span></h2>
       <p>{html.escape(CONFIG['registration'])}</p>
       <div class="phone-call">
         <div class="icon">{icon('phone')}</div>
@@ -588,8 +591,8 @@ def build_contact():
 {footer()}"""
 
     write("contact-us/index.html", head(
-        "Contact Us | CTW Travels Erbil",
-        "Get in touch with CTW Travels in Erbil, Kurdistan Region of Iraq — phone, e-mail, or the contact form.",
+        "Contact Us | Blueline Travels Mosul",
+        "Get in touch with Blueline Travels in Mosul, Iraq — phone, e-mail, or the contact form.",
         "/contact-us/") + body)
 
 # ----------------------------------------------------------------------------
@@ -614,7 +617,7 @@ def build_credits():
                 f'by {html.escape(artist)}, licensed {m["lic"]} via Wikimedia Commons.</li>')
     body = f"""{navbar('')}
 <main id="main">
-{page_banner('CTW Travels', 'Photo Credits')}
+{page_banner('Blueline Travels', 'Photo Credits')}
 <section class="section">
   <div class="container">
     <p>Photographs of Erbil used on this site are the work of the following photographers, used under their respective free licenses:</p>
@@ -630,14 +633,14 @@ def build_credits():
 </main>
 {footer()}"""
     write("credits/index.html", head(
-        "Photo Credits | CTW Travels Erbil",
+        "Photo Credits | Blueline Travels Mosul",
         "Attribution for the openly licensed photographs of Erbil used on this website.",
         "/credits/") + body)
 
 def build_404():
     body = f"""{navbar('')}
 <main id="main">
-{page_banner('CTW Travels', 'Page Not Found')}
+{page_banner('Blueline Travels', 'Page Not Found')}
 <section class="section center">
   <div class="container">
     <p>The page you are looking for doesn't exist or has moved.</p>
@@ -647,7 +650,7 @@ def build_404():
 </main>
 {footer()}"""
     write("404.html", head(
-        "Page Not Found | CTW Travels Erbil",
+        "Page Not Found | Blueline Travels Mosul",
         "The page you are looking for could not be found.",
         "/404.html") + body)
 

@@ -1,0 +1,8 @@
+{
+  "name": "blueline-iq-com",
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}
