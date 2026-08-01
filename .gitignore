@@ -1,0 +1,13 @@
+# Research material only — offline mirror of the ORIGINAL ctw-travels.co.uk
+# (their photos, logo, exact HTML) plus our internal analysis. Not part of
+# the deliverable, not ours to publish, and 29 MB of dead weight. Kept
+# locally for reference; never tracked in git.
+reference/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Python (tools/build.py)
+__pycache__/
+*.pyc
